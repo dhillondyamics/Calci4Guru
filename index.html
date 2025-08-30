@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calci4Guru</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="icon.png"> <!-- Assume you add a 512x512 icon.png for PWA -->
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- html2canvas -->
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <!-- docx -->
+    <script src="https://unpkg.com/docx@7.3.0/build/index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>SPRING DALE PUBLIC SCHOOL</h1>
+            <h2>Calci4Guru</h2>
+            <!-- Placeholder for logo; replace src with actual logo URL or file -->
+            <img src="https://via.placeholder.com/150?text=School+Logo" alt="School Logo" class="logo">
+        </header>
+        <main>
+            <label for="class-select">Select Class:</label>
+            <select id="class-select">
+                <option value="">-- Choose a Class --</option>
+                <option value="XII Non Medical">XII Non Medical</option>
+                <option value="other">Other Classes</option>
+            </select>
+            <div id="content"></div>
+            <div id="report-form" style="display: none;">
+                <input type="text" id="teacher-name" placeholder="Name of the Teacher">
+                <input type="text" id="test-name" placeholder="Name of the Test">
+                <input type="number" id="total-marks" placeholder="Total Marks of the Test">
+                <label for="format-select">Choose Format:</label>
+                <select id="format-select">
+                    <option value="PDF">PDF</option>
+                    <option value="JPEG">JPEG</option>
+                    <option value="WORD">WORD</option>
+                </select>
+                <button onclick="createReport()"><i class="fas fa-file-export"></i> Create Report</button>
+            </div>
+        </main>
+    </div>
+    <!-- Hidden div for report rendering -->
+    <div id="report-preview" style="display: none;"></div>
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js');
+            });
+        }
+    </script>
+</body>
+</html>

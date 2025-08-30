@@ -1,0 +1,186 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+.container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 800px;
+    width: 90%;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    margin: 5px 0;
+    color: #2c3e50;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+select, input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+select:focus, input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s, transform 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+button:hover {
+    background: #2980b9;
+    transform: scale(1.05);
+}
+
+#student-list {
+    margin-top: 20px;
+}
+
+.student-row {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.student-info {
+    flex: 1;
+}
+
+.student-marks {
+    width: 100px;
+    margin-left: 20px;
+}
+
+#coming-soon {
+    text-align: center;
+    font-size: 18px;
+    color: #e74c3c;
+    margin-top: 20px;
+}
+
+/* Report Preview Styles */
+#report-preview {
+    background: white;
+    padding: 30px;
+    border: 2px solid #ccc;
+    margin: 20px auto;
+    max-width: 800px;
+    font-family: 'Times New Roman', serif;
+}
+
+.report-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+/* Wrapper for table to make it scrollable on small screens */
+.report-table-wrapper {
+    overflow-x: auto;
+}
+
+.report-table th, .report-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.report-table th {
+    background: #f2f2f2;
+    font-weight: bold;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .student-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .student-marks {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    #report-preview {
+        padding: 15px;
+    }
+
+    .report-table th, .report-table td {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
