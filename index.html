@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=5.0">
+    <title>School Report Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="logo.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- jsPDF AutoTable -->
+    <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.3/dist/jspdf.plugin.autotable.min.js"></script>
+    <!-- html2canvas -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- docx -->
+    <script src="https://unpkg.com/docx@latest/build/index.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="logo.png" alt="School Logo" class="logo">
+            <h1>SPRING DALE PUBLIC SCHOOL LUDHIANA</h1>
+        </header>
+        <main>
+            <label for="class-select">Select Class:</label>
+            <select id="class-select">
+                <option value="">-- Choose a Class --</option>
+                <option value="XII Non Medical">XII Non Medical</option>
+                <option value="more">More Coming Soon</option>
+            </select>
+            <div id="content"></div>
+            <div id="report-form" style="display: none;">
+                <input type="text" id="teacher-name" placeholder="Name of the Teacher" required>
+                <input type="text" id="test-name" placeholder="Name of the Test" required>
+                <input type="date" id="test-date" placeholder="Date of the Test" required>
+                <input type="number" id="total-marks" placeholder="Full Marks of the Test" min="1" required>
+                <label for="format-select">Format of Report:</label>
+                <select id="format-select">
+                    <option value="PDF">PDF</option>
+                    <option value="JPEG">JPEG</option>
+                    <option value="WORD">WORD</option>
+                </select>
+                <button onclick="createReport()"><i class="fas fa-file-export"></i> Create Report</button>
+            </div>
+        </main>
+    </div>
+    <div id="report-preview" style="display: none;"></div>
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').catch(error => console.error('Service Worker registration failed:', error));
+            });
+        }
+    </script>
+</body>
+</html>

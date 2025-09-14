@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+    touch-action: manipulation;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to bottom, #f0f4f8, #d9e2ec);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+    -webkit-text-size-adjust: 100%;
+}
+
+.container {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 800px;
+    width: 90%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+h1 {
+    margin: 5px 0;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-width: 150px;
+    margin: 0 auto;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+#student-list {
+    margin-top: 15px;
+}
+
+.student-row {
+    display: flex;
+    align-items: center;
+    background: #f9f9f9;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+.student-info {
+    flex: 1;
+    font-size: 0.9rem;
+}
+
+.student-marks {
+    width: 80px;
+    margin-left: 10px;
+    padding: 8px;
+}
+
+#coming-soon {
+    text-align: center;
+    font-size: 16px;
+    color: #e74c3c;
+    margin-top: 15px;
+}
+
+#report-preview {
+    background: white;
+    padding: 20px;
+    max-width: 210mm;
+    margin: 0 auto;
+    font-family: 'Times New Roman', serif;
+}
+
+.report-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.report-table-wrapper {
+    overflow-x: auto;
+}
+
+.report-table th, .report-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.report-table th {
+    background: #f2f2f2;
+}
+
+.report-footer {
+    margin-top: 20px;
+    text-align: left;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+
+    .logo {
+        width: 100px;
+    }
+
+    .student-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .student-marks {
+        margin-left: 0;
+        margin-top: 8px;
+        width: 100%;
+    }
+}
